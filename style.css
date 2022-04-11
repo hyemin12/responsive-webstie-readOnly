@@ -11,13 +11,52 @@ a {
 li {
   list-style: none;
 }
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+/* ------- */
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  height: 44px;
+  background-color: #222;
+}
+header h1 a {
+  display: block;
+  padding-top: 10px;
+  padding-left: 20px;
+  color: #fff;
+  font-size: 20px;
+}
+header .toggle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: #4acaa8;
+  transition: all 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}
+header .toggle i {
+  color: #fff;
+}
+header .toggle.open {
+  right: 20em;
+}
 
 .container {
   display: flex;
-  width: 98vw;
+  width: 100vw;
   overflow-x: hidden;
 }
 
+/* --------- */
 /* SIDE BAR */
 #side-bar {
   display: flex;
@@ -89,6 +128,23 @@ li {
 #side-bar .sns-wrapper li i:hover {
   color: #fff;
 }
+
+@media screen and (max-width: 1023px) {
+  #side-bar {
+    right: 0;
+    opacity: 1;
+    transition: all 0.3s;
+    transform: translateX(0);
+  }
+  #side-bar.none {
+    right: -20em;
+    opacity: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+}
+
+/* ---- */
 /* MAIN */
 #main {
   width: 100%;
@@ -109,6 +165,18 @@ li {
   color: #888;
   line-height: 1.6;
 }
+
+@media screen and (max-width: 1023px) {
+  #main {
+    padding-right: 0;
+  }
+}
+@media screen and (max-width: 767px) {
+  #main .contents-wrapper {
+    padding: 2em 3em;
+  }
+}
+
 /* ONE */
 #main #one .image-banner {
   height: 290px;
@@ -186,6 +254,39 @@ li {
 #main #three ul li .text-wrapper p {
   padding: 0;
 }
+
+@media screen and (max-width: 767px) {
+  #main #three ul li {
+    display: block;
+    padding: 30px 0;
+  }
+  #main #three ul li:last-child {
+    padding-bottom: 0;
+    border: none;
+  }
+  #main #three ul li .article-image {
+    width: 100%;
+    height: 100%;
+  }
+  #main #three ul li .article-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  #main #three ul li .text-wrapper {
+    width: 100%;
+    padding-top: 20px;
+  }
+  #main #three ul li .text-wrapper h4 {
+    padding: 0;
+    margin-bottom: 10px;
+    font-size: 1.25em;
+  }
+  #main #three ul li .text-wrapper p {
+    padding: 0;
+  }
+}
+
 /* FOUR */
 #main #four .form-wrapper form {
   display: flex;
@@ -235,4 +336,9 @@ li {
 }
 #main #four .form-wrapper form button.btn-submit:hover {
   background-color: #42e2b7;
+}
+
+@media screen and (max-width: 1023px) {
+}
+@media screen and (max-width: 767px) {
 }
