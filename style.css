@@ -18,10 +18,8 @@ body {
 /* ------- */
 /* HEADER */
 header {
+  display: none;
   position: fixed;
-  width: 100%;
-  height: 44px;
-  background-color: #222;
 }
 header h1 a {
   display: block;
@@ -48,6 +46,15 @@ header .toggle i {
 }
 header .toggle.open {
   right: 20em;
+}
+@media screen and (max-width: 1023px) {
+  header {
+    display: block;
+    width: 100%;
+    height: 44px;
+    background-color: #222;
+    position: fixed;
+  }
 }
 
 .container {
@@ -140,8 +147,6 @@ header .toggle.open {
     right: -20em;
     opacity: 0;
   }
-}
-@media screen and (max-width: 767px) {
 }
 
 /* ---- */
